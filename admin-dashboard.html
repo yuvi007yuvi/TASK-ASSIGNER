@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Admin Dashboard</h1>
+        <h2>Add Employee</h2>
+        <form id="add-employee-form">
+            <div class="form-group">
+                <label for="employeeEmail">Employee Email:</label>
+                <input type="email" id="employeeEmail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="employeePassword">Password:</label>
+                <input type="password" id="employeePassword" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+        </form>
+        <hr>
+        <center><h2>Assign Task</h2></center>
+        <form id="assign-task-form">
+            <div class="form-group">
+                <label for="assignEmployeeEmail">Employee Email:</label>
+                <input type="email" id="assignEmployeeEmail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="taskDate">Date:</label>
+                <input type="date" id="taskDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Task Description:</label>
+                <textarea id="taskDescription" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Assign Task</button>
+        </form>
+        <hr>
+        <h2 class="mb-3">Tasks</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Employee Email</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="taskTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>
